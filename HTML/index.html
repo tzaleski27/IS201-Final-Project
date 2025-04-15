@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Wasatch Warriors</title>
+    <link rel="stylesheet" href="../HTML/mystyles.css">
+</head>
+
+<body>
+    <!-- Anything I type is a comment -->
+    
+    <img src="../HTML/Wasatch Warriors Logo.jpeg" width="350" style="display: block; margin: 0 auto;" />
+    
+    <h1>Wasatch Warriors</h1>
+
+    <h2> Roundnet Pro League</h2>
+
+
+    <h2><a href="#team-section">Our Team</a>    |   <a href="../startbootstrap-resume-gh-pages/index.html">My Resume</a> </h2> | <h2> <a href= "../pages/layout.html"> Other Info</a></h2>
+
+    <h4><a href="#TopRoundnetPlayers">Top Roundnet Players</a></h4>
+    <!-- Link to second page, properly placed outside of heading -->
+
+    <body>
+        <h1>Highlight Reel</h1>
+      
+        <div style="display: flex; justify-content: center; margin: 20px 0;">
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/jV5nobfbqFM" 
+            title="YouTube video player" frameborder="0" 
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+            allowfullscreen></iframe>
+          </div>
+      </body>
+ 
+
+    <h3>
+        <a href="https://www.google.com" target="_blank" title="Google">This is a link to Google</a>
+    </h3>
+
+    <br><br><br><br><br><br><br><br><br><br><br><br>
+   
+
+    This is my first html file! Wow! <br>
+    Typing br lets me do a line break, like pressing enter on the keyboard
+    <br>
+
+    <h2 id="team-section">Our Ideal Pro Team</h2>
+    <ul>
+        <li>
+          <strong>Our Ideal Pro Team</strong>
+          <ol>
+            <li>Taylor Church</li>
+            <li>Caleb Jarrett</li>
+            <li>Remi Prince</li>
+            <li>Matt Barlow</li>
+            <li>Trevor Zaleski</li>
+            <li>Kannon Forbush</li>
+            <li>Bryce Young</li>
+          </ol>
+        </li>
+        <br><br>
+        <li>
+          <strong>Our Ideal Minor Team</strong>
+          <ol>
+            <li>Pete Barton</li>
+            <li>Kody Price</li>
+            <li>Lazarus Shettell</li>
+            <li>William Fluckiger</li>
+            <li>Brian Hansen</li>
+            <li>Josh Lin</li>
+            <li>Josh Balmforth</li>
+          </ol>
+        </li>
+      </ul>
+
+      <br><br><br><br><br>
+      <div style="text-align: center; max-width: 100%; margin: 30px auto;">
+        <h1 id="TopRoundnetPlayers">Top Roundnet Players (2016–2018)</h1>
+        <br>
+        <div style="display: inline-block;">
+          <iframe 
+            src="https://public.tableau.com/views/TopRoundnetPlayers2016-18/Dashboard2?:embed=y&:display_count=yes&:showVizHome=no" 
+            width="800" height="800" frameborder="1" allowfullscreen>
+          </iframe>
+        </div>
+      </div>
+      
+      
+      <script type='text/javascript'>
+        document.addEventListener("DOMContentLoaded", function () {
+          var divElement = document.getElementById('viz1744682089202');
+          var vizElement = divElement.getElementsByTagName('object')[0];
+          vizElement.style.minWidth = '420px';
+          vizElement.style.maxWidth = '650px';
+          vizElement.style.width = '100%';
+          vizElement.style.minHeight = '587px';
+          vizElement.style.maxHeight = '887px';
+          vizElement.style.height = (divElement.offsetWidth * 0.75) + 'px';
+          
+          var scriptElement = document.createElement('script');
+          scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';
+          vizElement.parentNode.insertBefore(scriptElement, vizElement);
+        });
+      </script>
+    <!-- Keep all content inside the body tag -->
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+</body>
+</html>

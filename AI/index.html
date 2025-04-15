@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Spikeball Fantasy Name Generator</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: #0f1a2d;
+      color: #c3c6cf;
+      text-align: center;
+      padding: 2rem;
+    }
+
+    h1 {
+      font-size: 2rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .name-container {
+      font-size: 2rem;
+      font-weight: bold;
+      margin: 1.5rem 0;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .word {
+      padding: 10px 18px;
+      border-radius: 10px;
+      background: #6d84a4;
+      color: #f4f6fb;
+      cursor: pointer;
+      user-select: none;
+      transition: transform 0.2s, background-color 0.3s;
+    }
+
+    .word:hover {
+      background-color: #335a92;
+    }
+
+    .locked {
+      background: #090c10;
+      color: #f4f6fb;
+      transform: scale(1.05);
+    }
+
+    button {
+      padding: 0.6rem 1.5rem;
+      margin-top: 1rem;
+      font-size: 1rem;
+      border: none;
+      border-radius: 8px;
+      background-color: #335a92;
+      color: #f4f6fb;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    button:hover {
+      background-color: #6d84a4;
+    }
+
+    .note {
+      margin-top: 1rem;
+      font-size: 0.9rem;
+      color: #c3c6cf;
+    }
+  </style>
+</head>
+<body>
+  <h1>Spikeball Fantasy Name Generator</h1>
+  <div class="name-container" id="nameContainer"></div>
+  <button onclick="generateName()">🎲</button>
+  <div class="note">Click a word to lock/unlock it!</div>
+
+  <script>
+    const firstParts = [
+      "Set", "Net", "Ball", "Spike", "Team", "Serve", "Dig", "Roundnet", "Spin", "Slammers", "Turbo",
+      "Backhand", "Dive", "Drop", "Trick", "Ghost", "Power", "Sunburn", "Waffle", "Sky", "Bouncin'", "Alpha", "Hyper", "Echo", "Ricochet"
+    ];
+  
+    const secondParts = [
+      "Destroy", "Whisperers", "Dragons", "Legends", "Goblins", "Masters", "Bandits", "Force", "Storm", "Wizards", "Crushers",
+      "Mermaids", "Bros", "Dads", "Rebels", "Llamas", "Tornadoes", "Squad", "Lords", "Boiz", "Tacos", "Fury", "Doom", "Mob", "Dust"
+ 
+    ];
+
+    let locked = [false, false];
+
+    function getRandom(arr) {
+      return arr[Math.floor(Math.random() * arr.length)];
+    }
+
+    function generateName() {
+      const nameContainer = document.getElementById('nameContainer');
+      nameContainer.innerHTML = "";
+
+      const word1 = locked[0] ? nameContainer.dataset.word1 : getRandom(firstParts);
+      const word2 = locked[1] ? nameContainer.dataset.word2 : getRandom(secondParts);
+
+      nameContainer.dataset.word1 = word1;
+      nameContainer.dataset.word2 = word2;
+
+      [word1, word2].forEach((word, index) => {
+        const span = document.createElement("span");
+        span.className = "word";
+        if (locked[index]) span.classList.add("locked");
+        span.textContent = word;
+        span.onclick = () => {
+          locked[index] = !locked[index];
+          span.classList.toggle("locked");
+        };
+        nameContainer.appendChild(span);
+      });
+    }
+
+    generateName();
+  </script>
+</body>
+</html>
